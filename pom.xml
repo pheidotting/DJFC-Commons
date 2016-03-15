@@ -19,11 +19,11 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
-        <dependency>
-            <groupId>nl.lakedigital.as.taakbeheer.client</groupId>
-            <artifactId>taakbeheerclient</artifactId>
-            <version>3.1</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>nl.lakedigital.as.taakbeheer.client</groupId>-->
+            <!--<artifactId>taakbeheerclient</artifactId>-->
+            <!--<version>3.1</version>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <plugins>
