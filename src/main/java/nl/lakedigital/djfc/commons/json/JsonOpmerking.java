@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 
 import java.io.Serializable;
 
-public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
+public class JsonOpmerking extends AbstracteJsonEntiteitMetSoortEnId implements Serializable, Comparable<JsonOpmerking> {
     private static final long serialVersionUID = -2035670222129537280L;
 
     private Long id;
@@ -12,15 +12,6 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
     private String opmerking;
     private String medewerker;
     private String medewerkerId;
-    private String schade;
-    private String hypotheek;
-    private String polis;
-    private String relatie;
-    private String bedrijf;
-    private String aangifte;
-    private String jaarcijfers;
-    private String risicoAnalyse;
-    private String soort;
     private String tekstBackup;
 
     public Long getId() {
@@ -61,78 +52,6 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
 
     public void setMedewerkerId(String medewerkerId) {
         this.medewerkerId = medewerkerId;
-    }
-
-    public String getSchade() {
-        return schade;
-    }
-
-    public void setSchade(String schade) {
-        this.schade = schade;
-    }
-
-    public String getHypotheek() {
-        return hypotheek;
-    }
-
-    public void setHypotheek(String hypotheek) {
-        this.hypotheek = hypotheek;
-    }
-
-    public String getPolis() {
-        return polis;
-    }
-
-    public void setPolis(String polis) {
-        this.polis = polis;
-    }
-
-    public String getRelatie() {
-        return relatie;
-    }
-
-    public void setRelatie(String relatie) {
-        this.relatie = relatie;
-    }
-
-    public String getBedrijf() {
-        return bedrijf;
-    }
-
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
-    }
-
-    public String getAangifte() {
-        return aangifte;
-    }
-
-    public void setAangifte(String aangifte) {
-        this.aangifte = aangifte;
-    }
-
-    public String getJaarcijfers() {
-        return jaarcijfers;
-    }
-
-    public void setJaarcijfers(String jaarcijfers) {
-        this.jaarcijfers = jaarcijfers;
-    }
-
-    public String getRisicoAnalyse() {
-        return risicoAnalyse;
-    }
-
-    public void setRisicoAnalyse(String risicoAnalyse) {
-        this.risicoAnalyse = risicoAnalyse;
-    }
-
-    public String getSoort() {
-        return soort;
-    }
-
-    public void setSoort(String soort) {
-        this.soort = soort;
     }
 
     public String getTekstBackup() {

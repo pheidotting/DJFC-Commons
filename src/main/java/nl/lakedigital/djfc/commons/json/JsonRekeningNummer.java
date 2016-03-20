@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.io.Serializable;
 import java.util.List;
 
-public class JsonRekeningNummer implements Serializable {
+public class JsonRekeningNummer extends AbstracteJsonEntiteitMetSoortEnId implements Serializable {
     private static final long serialVersionUID = 7872029330278528593L;
 
     private Long id;

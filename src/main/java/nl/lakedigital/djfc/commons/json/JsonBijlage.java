@@ -4,23 +4,21 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class JsonBijlage implements Comparable<JsonBijlage> {
-    private String id;
+public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Comparable<JsonBijlage> {
+    private Long id;
     private String bestandsNaam;
-    private String soortBijlage;
     private String url;
-    private String parentId;
     private String tonen;
     private String omschrijving;
     private String datumUpload;
     private String omschrijvingOfBestandsNaam;
     private String omschrijvingOfBestandsNaamBackup;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -32,28 +30,12 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
         this.bestandsNaam = bestandsNaam;
     }
 
-    public String getSoortBijlage() {
-        return soortBijlage;
-    }
-
-    public void setSoortBijlage(String soortBijlage) {
-        this.soortBijlage = soortBijlage;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public String getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
     }
 
     public String getTonen() {
@@ -105,8 +87,7 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
             return false;
         }
         JsonBijlage rhs = (JsonBijlage) object;
-        return new EqualsBuilder().append(this.bestandsNaam, rhs.bestandsNaam).append(this.id, rhs.id).append(this.soortBijlage, rhs.soortBijlage).append(this.url, rhs.url)
-                .append(this.parentId, rhs.parentId).isEquals();
+        return new EqualsBuilder().append(this.bestandsNaam, rhs.bestandsNaam).append(this.id, rhs.id).append(this.url, rhs.url).isEquals();
     }
 
     /**
@@ -114,7 +95,7 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
      */
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(this.bestandsNaam).append(this.id).append(this.soortBijlage).append(this.url).append(this.parentId).toHashCode();
+        return new HashCodeBuilder().append(this.bestandsNaam).append(this.id).append(this.url).toHashCode();
     }
 
     /**
@@ -122,13 +103,12 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
      */
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("soortBijlage", this.soortBijlage).append("url", this.url).append("bestandsNaam", this.bestandsNaam).append("id", this.id)
-                .append("parentId", this.parentId).toString();
+        return new ToStringBuilder(this).append("url", this.url).append("bestandsNaam", this.bestandsNaam).append("id", this.id).toString();
     }
 
     @Override
     public int compareTo(JsonBijlage o) {
-        if (this.soortBijlage == o.soortBijlage) {
+        if (this.getSoortEntiteit() == o.getSoortEntiteit()) {
             return this.bestandsNaam.compareTo(o.bestandsNaam);
         } else {
             return 0;

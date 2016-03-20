@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.io.Serializable;
 import java.util.List;
 
-public class JsonTelefoonnummer implements Serializable {
+public class JsonTelefoonnummer extends AbstracteJsonEntiteitMetSoortEnId implements Serializable {
     private static final long serialVersionUID = 3624291960507458499L;
 
     private Long id;
@@ -14,9 +14,6 @@ public class JsonTelefoonnummer implements Serializable {
     private String soort;
     private String omschrijving;
     private List<String> errors;
-    private String bedrijf;
-    private Long relatie;
-    private Long contactpersoon;
 
     public JsonTelefoonnummer() {
     }
@@ -67,30 +64,6 @@ public class JsonTelefoonnummer implements Serializable {
 
     public void setErrors(List<String> errors) {
         this.errors = errors;
-    }
-
-    public String getBedrijf() {
-        return bedrijf;
-    }
-
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
-    }
-
-    public Long getRelatie() {
-        return relatie;
-    }
-
-    public void setRelatie(Long relatie) {
-        this.relatie = relatie;
-    }
-
-    public Long getContactpersoon() {
-        return contactpersoon;
-    }
-
-    public void setContactpersoon(Long contactpersoon) {
-        this.contactpersoon = contactpersoon;
     }
 
     @Override
