@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
 
-public class JsonAdres implements Serializable {
+public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Serializable {
     private static final long serialVersionUID = 2361944992062349932L;
 
     private Long id;
@@ -16,8 +16,6 @@ public class JsonAdres implements Serializable {
     private String postcode;
     private String plaats;
     private String soortAdres;
-    private String soortEntiteit;
-    private Long entiteitId;
 
     public Long getId() {
         return id;
@@ -73,22 +71,6 @@ public class JsonAdres implements Serializable {
 
     public void setSoortAdres(String soortAdres) {
         this.soortAdres = soortAdres;
-    }
-
-    public String getSoortEntiteit() {
-        return soortEntiteit;
-    }
-
-    public void setSoortEntiteit(String soortEntiteit) {
-        this.soortEntiteit = soortEntiteit;
-    }
-
-    public Long getEntiteitId() {
-        return entiteitId;
-    }
-
-    public void setEntiteitId(Long entiteitId) {
-        this.entiteitId = entiteitId;
     }
 
     @Override
