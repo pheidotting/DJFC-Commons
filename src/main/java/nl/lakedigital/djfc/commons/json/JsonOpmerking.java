@@ -11,7 +11,7 @@ public class JsonOpmerking extends AbstracteJsonEntiteitMetSoortEnId implements 
     private String tijd;
     private String opmerking;
     private String medewerker;
-    private String medewerkerId;
+    private Long medewerkerId;
     private String tekstBackup;
 
     public Long getId() {
@@ -46,11 +46,11 @@ public class JsonOpmerking extends AbstracteJsonEntiteitMetSoortEnId implements 
         this.medewerker = medewerker;
     }
 
-    public String getMedewerkerId() {
+    public Long getMedewerkerId() {
         return medewerkerId;
     }
 
-    public void setMedewerkerId(String medewerkerId) {
+    public void setMedewerkerId(Long medewerkerId) {
         this.medewerkerId = medewerkerId;
     }
 
