@@ -68,7 +68,6 @@ public class JsonOpmerking extends AbstracteJsonEntiteitMetSoortEnId implements 
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((opmerking == null) ? 0 : opmerking.hashCode());
-        result = prime * result + ((tijd == null) ? 0 : opmerking.hashCode());
         return result;
     }
 
@@ -81,7 +80,7 @@ public class JsonOpmerking extends AbstracteJsonEntiteitMetSoortEnId implements 
             return false;
         }
         JsonOpmerking other = (JsonOpmerking) obj;
-        return new EqualsBuilder().append(id, other.id).append(opmerking, other.opmerking).append(tijd, other.tijd).isEquals();
+        return new EqualsBuilder().append(id, other.id).append(opmerking, other.opmerking).isEquals();
     }
 
     @Override

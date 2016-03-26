@@ -78,32 +78,29 @@ public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Co
         this.omschrijvingOfBestandsNaamBackup = omschrijvingOfBestandsNaamBackup;
     }
 
-    /**
-     * @see Object#equals(Object)
-     */
     @Override
-    public boolean equals(Object object) {
-        if (!(object instanceof JsonBijlage)) {
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof JsonBijlage)) {
             return false;
         }
-        JsonBijlage rhs = (JsonBijlage) object;
-        return new EqualsBuilder().append(this.bestandsNaam, rhs.bestandsNaam).append(this.id, rhs.id).append(this.url, rhs.url).isEquals();
+
+        JsonBijlage that = (JsonBijlage) o;
+
+        return new EqualsBuilder().append(getId(), that.getId()).append(getBestandsNaam(), that.getBestandsNaam()).append(getOmschrijving(), that.getOmschrijving()).isEquals();
     }
 
-    /**
-     * @see Object#hashCode()
-     */
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(this.bestandsNaam).append(this.id).append(this.url).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).append(getBestandsNaam()).append(getOmschrijving()).toHashCode();
     }
 
-    /**
-     * @see Object#toString()
-     */
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("url", this.url).append("bestandsNaam", this.bestandsNaam).append("id", this.id).toString();
+        return new ToStringBuilder(this).append("id", id).append("bestandsNaam", bestandsNaam).append("url", url).append("tonen", tonen).append("omschrijving", omschrijving).append("datumUpload", datumUpload).append("omschrijvingOfBestandsNaam", omschrijvingOfBestandsNaam).append("omschrijvingOfBestandsNaamBackup", omschrijvingOfBestandsNaamBackup).toString();
     }
 
     @Override
