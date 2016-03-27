@@ -6,6 +6,8 @@ public abstract class AbstracteJsonEntiteitMetSoortEnId {
 
     public abstract Long getId();
 
+    public abstract void setId(Long id);
+
     public String getSoortEntiteit() {
         return soortEntiteit;
     }
