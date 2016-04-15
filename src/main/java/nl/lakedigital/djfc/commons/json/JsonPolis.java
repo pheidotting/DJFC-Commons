@@ -3,10 +3,9 @@ package nl.lakedigital.djfc.commons.json;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkingen {
+public class JsonPolis {
     private Long id;
     private String status;
     private String polisNummer;
@@ -19,16 +18,12 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
     private String betaalfrequentie;
     private String dekking;
     private String verzekerdeZaak;
-    private List<JsonOpmerking> opmerkingen;
     private String maatschappij;
     private String soort;
-    private List<JsonBijlage> bijlages;
     private String bedrijf;
-    private Long bedrijfsId;
     private String idDiv;
     private String idDivLink;
     private String className;
-    private List<JsonSchade> schades;
     private String relatie;
     private String titel;
     private String omschrijvingVerzekering;
@@ -134,17 +129,6 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.verzekerdeZaak = verzekerdeZaak;
     }
 
-    public List<JsonOpmerking> getOpmerkingen() {
-        if (opmerkingen == null) {
-            opmerkingen = new ArrayList<JsonOpmerking>();
-        }
-        return opmerkingen;
-    }
-
-    public void setOpmerkingen(List<JsonOpmerking> opmerkingen) {
-        this.opmerkingen = opmerkingen;
-    }
-
     public String getMaatschappij() {
         return maatschappij;
     }
@@ -161,17 +145,6 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.soort = soort;
     }
 
-    public List<JsonBijlage> getBijlages() {
-        if (bijlages == null) {
-            bijlages = new ArrayList<>();
-        }
-        return bijlages;
-    }
-
-    public void setBijlages(List<JsonBijlage> bijlages) {
-        this.bijlages = bijlages;
-    }
-
     public String getBedrijf() {
         return bedrijf;
     }
@@ -179,26 +152,6 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
     public void setBedrijf(String bedrijf) {
         this.bedrijf = bedrijf;
     }
-
-    public Long getBedrijfsId() {
-        return bedrijfsId;
-    }
-
-    public void setBedrijfsId(Long bedrijfsId) {
-        this.bedrijfsId = bedrijfsId;
-    }
-
-    public List<JsonSchade> getSchades() {
-        if (schades == null) {
-            schades = new ArrayList<JsonSchade>();
-        }
-        return schades;
-    }
-
-    public void setSchades(List<JsonSchade> schades) {
-        this.schades = schades;
-    }
-
     public String getIdDiv() {
         return idDiv;
     }
@@ -291,46 +244,22 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
     }
 
     @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(bedrijf).append(betaalfrequentie).append(className).append(id).append(idDiv).append(idDivLink).append(ingangsDatum).append(maatschappij).append(opmerkingen).append(polisNummer).append(premie).append(prolongatieDatum).append(soort).append(wijzigingsDatum).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        JsonPolis other = (JsonPolis) obj;
 
-        return new EqualsBuilder().append(bedrijf, other.bedrijf).append(betaalfrequentie, other.betaalfrequentie).append(className, other.className).append(id, other.id).append(idDiv, other.idDiv).append(idDivLink, other.idDivLink).append(ingangsDatum, other.ingangsDatum).append(maatschappij, other.maatschappij).append(opmerkingen, other.opmerkingen).append(polisNummer, other.polisNummer).append(premie, other.premie).append(prolongatieDatum, other.prolongatieDatum).append(soort, other.soort).append(wijzigingsDatum, other.wijzigingsDatum).isEquals();
+        if (!(o instanceof JsonPolis)) {
+            return false;
+        }
+
+        JsonPolis jsonPolis = (JsonPolis) o;
+
+        return new EqualsBuilder().append(getId(), jsonPolis.getId()).append(getStatus(), jsonPolis.getStatus()).append(getPolisNummer(), jsonPolis.getPolisNummer()).append(getKenmerk(), jsonPolis.getKenmerk()).append(getIngangsDatum(), jsonPolis.getIngangsDatum()).append(getEindDatum(), jsonPolis.getEindDatum()).append(getPremie(), jsonPolis.getPremie()).append(getWijzigingsDatum(), jsonPolis.getWijzigingsDatum()).append(getProlongatieDatum(), jsonPolis.getProlongatieDatum()).append(getBetaalfrequentie(), jsonPolis.getBetaalfrequentie()).append(getDekking(), jsonPolis.getDekking()).append(getVerzekerdeZaak(), jsonPolis.getVerzekerdeZaak()).append(getMaatschappij(), jsonPolis.getMaatschappij()).append(getSoort(), jsonPolis.getSoort()).append(getBedrijf(), jsonPolis.getBedrijf()).append(getClassName(), jsonPolis.getClassName()).append(getRelatie(), jsonPolis.getRelatie()).append(getTitel(), jsonPolis.getTitel()).append(getOmschrijvingVerzekering(), jsonPolis.getOmschrijvingVerzekering()).append(getSoortEntiteit(), jsonPolis.getSoortEntiteit()).isEquals();
     }
 
     @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\nJsonPolis [id=").append(id);
-        builder.append(", polisNummer=").append(polisNummer);
-        builder.append(", ingangsDatum=").append(ingangsDatum);
-        builder.append(", premie=").append(premie);
-        builder.append(", wijzigingsDatum=").append(wijzigingsDatum);
-        builder.append(", prolongatieDatum=").append(prolongatieDatum);
-        builder.append(", betaalfrequentie=").append(betaalfrequentie);
-        builder.append(", opmerkingen=").append(opmerkingen);
-        builder.append(", maatschappij=").append(maatschappij);
-        builder.append(", soort=").append(soort);
-        builder.append(", bedrijf=").append(bedrijf);
-        builder.append(", idDiv=").append(idDiv);
-        builder.append(", idDivLink=").append(idDivLink);
-        builder.append(", className=").append(className);
-        builder.append(", relatie=").append(relatie);
-        builder.append("]");
-        return builder.toString();
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(getId()).append(getStatus()).append(getPolisNummer()).append(getKenmerk()).append(getIngangsDatum()).append(getEindDatum()).append(getPremie()).append(getWijzigingsDatum()).append(getProlongatieDatum()).append(getBetaalfrequentie()).append(getDekking()).append(getVerzekerdeZaak()).append(getMaatschappij()).append(getSoort()).append(getBedrijf()).append(getClassName()).append(getRelatie()).append(getTitel()).append(getOmschrijvingVerzekering()).append(getSoortEntiteit()).toHashCode();
     }
-
 }
