@@ -26,6 +26,7 @@ public class JsonRelatie {
     private String readOnly;
     private String notReadOnly;
 //    private List<JsonTaak> openstaandeTaken;
+private String emailadres;
 
     public String getRoepnaam() {
         return roepnaam;
@@ -274,6 +275,14 @@ public class JsonRelatie {
 //    public void setOpenstaandeTaken(List<JsonTaak> openstaandeTaken) {
 //        this.openstaandeTaken = openstaandeTaken;
 //    }
+
+    public String getEmailadres() {
+        return emailadres;
+    }
+
+    public void setEmailadres(String emailadres) {
+        this.emailadres = emailadres;
+    }
 
     @Override
     public boolean equals(Object o) {

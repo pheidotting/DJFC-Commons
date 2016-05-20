@@ -13,6 +13,7 @@ public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Co
     private String datumUpload;
     private String omschrijvingOfBestandsNaam;
     private String omschrijvingOfBestandsNaamBackup;
+    private String s3Identificatie;
 
     public Long getId() {
         return id;
@@ -76,6 +77,14 @@ public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Co
 
     public void setOmschrijvingOfBestandsNaamBackup(String omschrijvingOfBestandsNaamBackup) {
         this.omschrijvingOfBestandsNaamBackup = omschrijvingOfBestandsNaamBackup;
+    }
+
+    public String getS3Identificatie() {
+        return s3Identificatie;
+    }
+
+    public void setS3Identificatie(String s3Identificatie) {
+        this.s3Identificatie = s3Identificatie;
     }
 
     @Override
