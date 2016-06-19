@@ -11,7 +11,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 @JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
-@JsonSubTypes({@JsonSubTypes.Type(value = JsonIngaandeBrief.class, name = "ingaandebrief"), @JsonSubTypes.Type(value = JsonUitgaandeBrief.class, name = "uitgaandebrief"), @JsonSubTypes.Type(value = JsonIngaandeEmail.class, name = "ingaandeemail"), @JsonSubTypes.Type(value = JsonUitgaandeEmail.class, name = "uitgaandeemail")})
+@JsonSubTypes({//
+        @JsonSubTypes.Type(value = JsonIngaandeBrief.class, name = "JsonIngaandeBrief"),//
+        @JsonSubTypes.Type(value = JsonUitgaandeBrief.class, name = "JsonUitgaandeBrief"), //
+        @JsonSubTypes.Type(value = JsonIngaandeEmail.class, name = "JsonIngaandeEmail"), //
+        @JsonSubTypes.Type(value = JsonUitgaandeEmail.class, name = "JsonUitgaandeEmail")//
+})
 public abstract class JsonCommunicatieProduct {
     private Long id;
     private String datumTijdCreatie;
