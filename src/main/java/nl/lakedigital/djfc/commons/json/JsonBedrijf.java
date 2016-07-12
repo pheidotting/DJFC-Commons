@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonBedrijf implements ObjectMetJsonOpmerkingen, ObjectMetJsonBijlages, ObjectMetJsonAdressen, ObjectMetJsonTelefoonnummers {
+public class JsonBedrijf {
 
     private String id;
     private List<JsonPolis> polissen;
