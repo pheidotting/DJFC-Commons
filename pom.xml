@@ -6,7 +6,7 @@
 
     <groupId>nl.lakedigital.djfc</groupId>
     <artifactId>djfc-commons</artifactId>
-    <version>4.0</version>
+    <version>4.0.2</version>
 
     <dependencies>
         <dependency>
@@ -32,8 +32,9 @@
         <dependency>
             <groupId>ch.vorburger.mariaDB4j</groupId>
             <artifactId>mariaDB4j</artifactId>
-            <version>LATEST</version>
+            <version>2.2.1</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>
