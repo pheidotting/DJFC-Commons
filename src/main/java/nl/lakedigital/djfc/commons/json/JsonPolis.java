@@ -20,16 +20,17 @@ public class JsonPolis {
     private String verzekerdeZaak;
     private String maatschappij;
     private String soort;
-    private String bedrijf;
+    //    private String bedrijf;
     private String idDiv;
     private String idDivLink;
     private String className;
-    private String relatie;
+    //    private String relatie;
     private String titel;
     private String omschrijvingVerzekering;
     private List<String> errors;
     private String soortEntiteit;
-    private JsonOpmerkingenModel opmerkingenModel;
+    private Long entiteitId;
+    //    private JsonOpmerkingenModel opmerkingenModel;
     private String readOnly;
     private String notReadOnly;
 
@@ -145,13 +146,13 @@ public class JsonPolis {
         this.soort = soort;
     }
 
-    public String getBedrijf() {
-        return bedrijf;
-    }
-
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
-    }
+    //    public String getBedrijf() {
+    //        return bedrijf;
+    //    }
+    //
+    //    public void setBedrijf(String bedrijf) {
+    //        this.bedrijf = bedrijf;
+    //    }
     public String getIdDiv() {
         return idDiv;
     }
@@ -176,13 +177,13 @@ public class JsonPolis {
         this.className = className;
     }
 
-    public String getRelatie() {
-        return relatie;
-    }
-
-    public void setRelatie(String relatie) {
-        this.relatie = relatie;
-    }
+    //    public String getRelatie() {
+    //        return relatie;
+    //    }
+    //
+    //    public void setRelatie(String relatie) {
+    //        this.relatie = relatie;
+    //    }
 
     public String getTitel() {
         return titel;
@@ -216,16 +217,16 @@ public class JsonPolis {
         this.soortEntiteit = soortEntiteit;
     }
 
-    public JsonOpmerkingenModel getOpmerkingenModel() {
-        if (opmerkingenModel == null) {
-            opmerkingenModel = new JsonOpmerkingenModel();
-        }
-        return opmerkingenModel;
-    }
-
-    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
-        this.opmerkingenModel = opmerkingenModel;
-    }
+    //    public JsonOpmerkingenModel getOpmerkingenModel() {
+    //        if (opmerkingenModel == null) {
+    //            opmerkingenModel = new JsonOpmerkingenModel();
+    //        }
+    //        return opmerkingenModel;
+    //    }
+    //
+    //    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
+    //        this.opmerkingenModel = opmerkingenModel;
+    //    }
 
     public String getReadOnly() {
         return readOnly;
@@ -243,6 +244,14 @@ public class JsonPolis {
         this.notReadOnly = notReadOnly;
     }
 
+    public Long getEntiteitId() {
+        return entiteitId;
+    }
+
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -255,11 +264,11 @@ public class JsonPolis {
 
         JsonPolis jsonPolis = (JsonPolis) o;
 
-        return new EqualsBuilder().append(getId(), jsonPolis.getId()).append(getStatus(), jsonPolis.getStatus()).append(getPolisNummer(), jsonPolis.getPolisNummer()).append(getKenmerk(), jsonPolis.getKenmerk()).append(getIngangsDatum(), jsonPolis.getIngangsDatum()).append(getEindDatum(), jsonPolis.getEindDatum()).append(getPremie(), jsonPolis.getPremie()).append(getWijzigingsDatum(), jsonPolis.getWijzigingsDatum()).append(getProlongatieDatum(), jsonPolis.getProlongatieDatum()).append(getBetaalfrequentie(), jsonPolis.getBetaalfrequentie()).append(getDekking(), jsonPolis.getDekking()).append(getVerzekerdeZaak(), jsonPolis.getVerzekerdeZaak()).append(getMaatschappij(), jsonPolis.getMaatschappij()).append(getSoort(), jsonPolis.getSoort()).append(getBedrijf(), jsonPolis.getBedrijf()).append(getClassName(), jsonPolis.getClassName()).append(getRelatie(), jsonPolis.getRelatie()).append(getTitel(), jsonPolis.getTitel()).append(getOmschrijvingVerzekering(), jsonPolis.getOmschrijvingVerzekering()).append(getSoortEntiteit(), jsonPolis.getSoortEntiteit()).isEquals();
+        return new EqualsBuilder().append(getId(), jsonPolis.getId()).append(getStatus(), jsonPolis.getStatus()).append(getPolisNummer(), jsonPolis.getPolisNummer()).append(getKenmerk(), jsonPolis.getKenmerk()).append(getIngangsDatum(), jsonPolis.getIngangsDatum()).append(getEindDatum(), jsonPolis.getEindDatum()).append(getPremie(), jsonPolis.getPremie()).append(getWijzigingsDatum(), jsonPolis.getWijzigingsDatum()).append(getProlongatieDatum(), jsonPolis.getProlongatieDatum()).append(getBetaalfrequentie(), jsonPolis.getBetaalfrequentie()).append(getDekking(), jsonPolis.getDekking()).append(getVerzekerdeZaak(), jsonPolis.getVerzekerdeZaak()).append(getMaatschappij(), jsonPolis.getMaatschappij()).append(getSoort(), jsonPolis.getSoort()).append(getClassName(), jsonPolis.getClassName()).append(getTitel(), jsonPolis.getTitel()).append(getOmschrijvingVerzekering(), jsonPolis.getOmschrijvingVerzekering()).append(getSoortEntiteit(), jsonPolis.getSoortEntiteit()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getId()).append(getStatus()).append(getPolisNummer()).append(getKenmerk()).append(getIngangsDatum()).append(getEindDatum()).append(getPremie()).append(getWijzigingsDatum()).append(getProlongatieDatum()).append(getBetaalfrequentie()).append(getDekking()).append(getVerzekerdeZaak()).append(getMaatschappij()).append(getSoort()).append(getBedrijf()).append(getClassName()).append(getRelatie()).append(getTitel()).append(getOmschrijvingVerzekering()).append(getSoortEntiteit()).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).append(getStatus()).append(getPolisNummer()).append(getKenmerk()).append(getIngangsDatum()).append(getEindDatum()).append(getPremie()).append(getWijzigingsDatum()).append(getProlongatieDatum()).append(getBetaalfrequentie()).append(getDekking()).append(getVerzekerdeZaak()).append(getMaatschappij()).append(getSoort()).append(getClassName()).append(getTitel()).append(getOmschrijvingVerzekering()).append(getSoortEntiteit()).toHashCode();
     }
 }
