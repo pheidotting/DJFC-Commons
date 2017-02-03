@@ -6,7 +6,7 @@
 
     <groupId>nl.lakedigital.djfc</groupId>
     <artifactId>djfc-commons</artifactId>
-    <version>4.0.2</version>
+    <version>5.0</version>
 
     <dependencies>
         <dependency>
