@@ -8,6 +8,14 @@
     <artifactId>djfc-commons</artifactId>
     <version>5.1</version>
 
+    <distributionManagement>
+        <repository>
+            <id>central-release</id>
+            <name>jenkins-releases</name>
+            <url>http://jenkins.djfc.local:8081/artifactory/libs-release-local</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
