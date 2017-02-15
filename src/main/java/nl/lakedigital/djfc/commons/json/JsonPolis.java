@@ -33,6 +33,7 @@ public class JsonPolis {
     //    private JsonOpmerkingenModel opmerkingenModel;
     private String readOnly;
     private String notReadOnly;
+    private List<JsonOpmerking> opmerkingen;
 
     public Long getId() {
         return id;
@@ -250,6 +251,14 @@ public class JsonPolis {
 
     public void setEntiteitId(Long entiteitId) {
         this.entiteitId = entiteitId;
+    }
+
+    public List<JsonOpmerking> getOpmerkingen() {
+        return opmerkingen;
+    }
+
+    public void setOpmerkingen(List<JsonOpmerking> opmerkingen) {
+        this.opmerkingen = opmerkingen;
     }
 
     @Override
