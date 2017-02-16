@@ -20,17 +20,14 @@ public class JsonPolis {
     private String verzekerdeZaak;
     private String maatschappij;
     private String soort;
-    //    private String bedrijf;
     private String idDiv;
     private String idDivLink;
     private String className;
-    //    private String relatie;
     private String titel;
     private String omschrijvingVerzekering;
     private List<String> errors;
     private String soortEntiteit;
     private Long entiteitId;
-    //    private JsonOpmerkingenModel opmerkingenModel;
     private String readOnly;
     private String notReadOnly;
     private List<JsonOpmerking> opmerkingen;
@@ -147,13 +144,6 @@ public class JsonPolis {
         this.soort = soort;
     }
 
-    //    public String getBedrijf() {
-    //        return bedrijf;
-    //    }
-    //
-    //    public void setBedrijf(String bedrijf) {
-    //        this.bedrijf = bedrijf;
-    //    }
     public String getIdDiv() {
         return idDiv;
     }
@@ -177,14 +167,6 @@ public class JsonPolis {
     public void setClassName(String className) {
         this.className = className;
     }
-
-    //    public String getRelatie() {
-    //        return relatie;
-    //    }
-    //
-    //    public void setRelatie(String relatie) {
-    //        this.relatie = relatie;
-    //    }
 
     public String getTitel() {
         return titel;
@@ -217,17 +199,6 @@ public class JsonPolis {
     public void setSoortEntiteit(String soortEntiteit) {
         this.soortEntiteit = soortEntiteit;
     }
-
-    //    public JsonOpmerkingenModel getOpmerkingenModel() {
-    //        if (opmerkingenModel == null) {
-    //            opmerkingenModel = new JsonOpmerkingenModel();
-    //        }
-    //        return opmerkingenModel;
-    //    }
-    //
-    //    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
-    //        this.opmerkingenModel = opmerkingenModel;
-    //    }
 
     public String getReadOnly() {
         return readOnly;
