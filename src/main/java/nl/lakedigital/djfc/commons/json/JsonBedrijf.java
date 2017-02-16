@@ -79,7 +79,7 @@ public class JsonBedrijf {
 
     public String getAdresOpgemaakt() {
         StringBuilder sb = new StringBuilder();
-        if (getAdressen().size() > 0) {
+        if (!getAdressen().isEmpty()) {
             JsonAdres adres = adressen.get(0);
 
             if (adres.getStraat() != null) {
@@ -262,9 +262,6 @@ public class JsonBedrijf {
     }
 
     public void setTelefoonnummers(List<JsonTelefoonnummer> telefoonnummers) {
-        if (telefoonnummers == null) {
-            telefoonnummers = Lists.newArrayList();
-        }
         this.telefoonnummers = telefoonnummers;
     }
 
