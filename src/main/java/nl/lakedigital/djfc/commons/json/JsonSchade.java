@@ -20,7 +20,7 @@ public class JsonSchade {
     private String eigenRisico;
     private String omschrijving;
     private List<JsonOpmerking> opmerkingen;
-    private List<JsonBijlage> bijlages;
+//    private List<JsonBijlage> bijlages;
     private String relatie;
     private Long bedrijf;
     private String idDiv;
@@ -28,7 +28,7 @@ public class JsonSchade {
     private String titel;
     private List<String> errors;
     private String soortEntiteit;
-    private JsonOpmerkingenModel opmerkingenModel;
+//    private JsonOpmerkingenModel opmerkingenModel;
     private String readOnly;
     private String notReadOnly;
 
@@ -139,16 +139,16 @@ public class JsonSchade {
         this.opmerkingen = opmerkingen;
     }
 
-    public List<JsonBijlage> getBijlages() {
-        if (bijlages == null) {
-            bijlages = new ArrayList<JsonBijlage>();
-        }
-        return bijlages;
-    }
-
-    public void setBijlages(List<JsonBijlage> bijlages) {
-        this.bijlages = bijlages;
-    }
+//    public List<JsonBijlage> getBijlages() {
+//        if (bijlages == null) {
+//            bijlages = new ArrayList<JsonBijlage>();
+//        }
+//        return bijlages;
+//    }
+//
+//    public void setBijlages(List<JsonBijlage> bijlages) {
+//        this.bijlages = bijlages;
+//    }
 
     public String getIdDiv() {
         return idDiv;
@@ -206,13 +206,13 @@ public class JsonSchade {
         this.soortEntiteit = soortEntiteit;
     }
 
-    public JsonOpmerkingenModel getOpmerkingenModel() {
-        return opmerkingenModel;
-    }
-
-    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
-        this.opmerkingenModel = opmerkingenModel;
-    }
+//    public JsonOpmerkingenModel getOpmerkingenModel() {
+//        return opmerkingenModel;
+//    }
+//
+//    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
+//        this.opmerkingenModel = opmerkingenModel;
+//    }
 
     public String getReadOnly() {
         return readOnly;
