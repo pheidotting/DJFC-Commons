@@ -14,6 +14,7 @@ public class Inloggen {
     private List<String> errors;
 
     public Inloggen() {
+        //moet wat in staan van sonar
     }
 
     public Inloggen(String identificatie, String wachtwoord) {
@@ -44,7 +45,7 @@ public class Inloggen {
 
     public List<String> getErrors() {
         if (errors == null) {
-            errors = new ArrayList<String>();
+            errors = new ArrayList<>();
         }
         return errors;
     }
