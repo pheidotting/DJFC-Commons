@@ -67,7 +67,7 @@ public class JsonAangifte {
 
     public List<JsonBijlage> getBijlages() {
         if (bijlages == null) {
-            bijlages = new ArrayList<JsonBijlage>();
+            bijlages = new ArrayList<>();
         }
         return bijlages;
     }
