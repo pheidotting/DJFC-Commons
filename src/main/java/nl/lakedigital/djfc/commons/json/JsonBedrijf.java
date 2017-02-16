@@ -78,7 +78,7 @@ public class JsonBedrijf {
     }
 
     public String getAdresOpgemaakt() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if (getAdressen().size() > 0) {
             JsonAdres adres = adressen.get(0);
 
