@@ -1,6 +1,6 @@
 package nl.lakedigital.djfc.commons.json;
 
-public class Identificatie {
+public class identificatie {
     private Long id;
     private String identificatie;
     private String soortEntiteit;
