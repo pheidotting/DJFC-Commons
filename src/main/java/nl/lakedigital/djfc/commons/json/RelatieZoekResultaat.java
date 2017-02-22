@@ -6,6 +6,7 @@ public class RelatieZoekResultaat extends BedrijfOfRelatie {
     private String voornaam;
     private String tussenvoegsel;
     private String achternaam;
+    private String geboortedatum;
 
     public Long getId() {
         return id;
@@ -45,5 +46,13 @@ public class RelatieZoekResultaat extends BedrijfOfRelatie {
 
     public void setAchternaam(String achternaam) {
         this.achternaam = achternaam;
+    }
+
+    public String getGeboortedatum() {
+        return geboortedatum;
+    }
+
+    public void setGeboortedatum(String geboortedatum) {
+        this.geboortedatum = geboortedatum;
     }
 }
