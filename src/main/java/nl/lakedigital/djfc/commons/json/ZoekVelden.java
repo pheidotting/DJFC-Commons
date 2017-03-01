@@ -13,14 +13,14 @@ public class ZoekVelden {
     private Boolean bedrijf;
 
     public boolean isEmpty() {
-        return naam != null && !"".equals(naam) &&//
-                geboortedatum != null && !"".equals(geboortedatum) &&//
-                tussenvoegsel != null && !"".equals(tussenvoegsel) &&//
-                polisnummer != null && !"".equals(polisnummer) &&//
-                voorletters != null && !"".equals(voorletters) &&//
-                schadenummer != null && !"".equals(schadenummer) &&//
-                adres != null && !"".equals(adres) &&//
-                postcode != null && !"".equals(postcode) &&//
+        return naam != null && !"".equals(naam) ||//
+                geboortedatum != null && !"".equals(geboortedatum) ||//
+                tussenvoegsel != null && !"".equals(tussenvoegsel) ||//
+                polisnummer != null && !"".equals(polisnummer) ||//
+                voorletters != null && !"".equals(voorletters) ||//
+                schadenummer != null && !"".equals(schadenummer) ||//
+                adres != null && !"".equals(adres) ||//
+                postcode != null && !"".equals(postcode) ||//
                 woonplaats != null && !"".equals(woonplaats);
     }
 
