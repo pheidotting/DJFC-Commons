@@ -16,6 +16,7 @@ public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Seri
     private String postcode;
     private String plaats;
     private String soortAdres;
+    private String identificatie;
 
     public JsonAdres() {
     }
@@ -74,6 +75,14 @@ public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Seri
 
     public void setSoortAdres(String soortAdres) {
         this.soortAdres = soortAdres;
+    }
+
+    public String getIdentificatie() {
+        return identificatie;
+    }
+
+    public void setIdentificatie(String identificatie) {
+        this.identificatie = identificatie;
     }
 
     @Override
