@@ -31,6 +31,7 @@ public class JsonPolis {
     private String readOnly;
     private String notReadOnly;
     private List<JsonOpmerking> opmerkingen;
+    private String identificatie;
 
     public Long getId() {
         return id;
@@ -230,6 +231,14 @@ public class JsonPolis {
 
     public void setOpmerkingen(List<JsonOpmerking> opmerkingen) {
         this.opmerkingen = opmerkingen;
+    }
+
+    public String getIdentificatie() {
+        return identificatie;
+    }
+
+    public void setIdentificatie(String identificatie) {
+        this.identificatie = identificatie;
     }
 
     @Override
