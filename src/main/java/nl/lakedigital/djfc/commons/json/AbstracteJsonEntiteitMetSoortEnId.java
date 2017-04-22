@@ -4,6 +4,7 @@ public abstract class AbstracteJsonEntiteitMetSoortEnId {
     private String soortEntiteit;
     private Long entiteitId;
     private String parentIdentificatie;
+    private String identifcatie;
 
     public abstract Long getId();
 
@@ -31,5 +32,13 @@ public abstract class AbstracteJsonEntiteitMetSoortEnId {
 
     public void setParentIdentificatie(String parentIdentificatie) {
         this.parentIdentificatie = parentIdentificatie;
+    }
+
+    public String getIdentifcatie() {
+        return identifcatie;
+    }
+
+    public void setIdentifcatie(String identifcatie) {
+        this.identifcatie = identifcatie;
     }
 }
