@@ -3,6 +3,7 @@ package nl.lakedigital.djfc.commons.json;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JsonPolis {
@@ -32,6 +33,7 @@ public class JsonPolis {
     private String notReadOnly;
     private List<JsonOpmerking> opmerkingen;
     private String identificatie;
+    private List<JsonSchade> schades;
 
     public Long getId() {
         return id;
@@ -239,6 +241,17 @@ public class JsonPolis {
 
     public void setIdentificatie(String identificatie) {
         this.identificatie = identificatie;
+    }
+
+    public List<JsonSchade> getSchades() {
+        if (schades == null) {
+            schades = new ArrayList<>();
+        }
+        return schades;
+    }
+
+    public void setSchades(List<JsonSchade> schades) {
+        this.schades = schades;
     }
 
     @Override
