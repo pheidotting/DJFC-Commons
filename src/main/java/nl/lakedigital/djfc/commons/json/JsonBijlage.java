@@ -15,7 +15,6 @@ public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Co
     private String omschrijvingOfBestandsNaamBackup;
     private String s3Identificatie;
     private Long groepBijlages;
-    private String identificatie;
 
     public Long getId() {
         return id;
@@ -95,14 +94,6 @@ public class JsonBijlage extends AbstracteJsonEntiteitMetSoortEnId implements Co
 
     public void setGroepBijlages(Long groepBijlages) {
         this.groepBijlages = groepBijlages;
-    }
-
-    public String getIdentificatie() {
-        return identificatie;
-    }
-
-    public void setIdentificatie(String identificatie) {
-        this.identificatie = identificatie;
     }
 
     @Override
