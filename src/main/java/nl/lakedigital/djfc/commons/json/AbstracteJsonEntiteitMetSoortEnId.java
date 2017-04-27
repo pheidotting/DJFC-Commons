@@ -1,10 +1,10 @@
 package nl.lakedigital.djfc.commons.json;
 
 public abstract class AbstracteJsonEntiteitMetSoortEnId {
-    private String soortEntiteit;
-    private Long entiteitId;
-    private String parentIdentificatie;
-    private String identificatie;
+    protected String soortEntiteit;
+    protected Long entiteitId;
+    protected String parentIdentificatie;
+    protected String identificatie;
 
     public abstract Long getId();
 

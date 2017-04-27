@@ -16,7 +16,6 @@ public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Seri
     private String postcode;
     private String plaats;
     private String soortAdres;
-    private String identificatie;
 
     public JsonAdres() {
     }
@@ -77,14 +76,6 @@ public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Seri
         this.soortAdres = soortAdres;
     }
 
-    public String getIdentificatie() {
-        return identificatie;
-    }
-
-    public void setIdentificatie(String identificatie) {
-        this.identificatie = identificatie;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -107,6 +98,6 @@ public class JsonAdres extends AbstracteJsonEntiteitMetSoortEnId implements Seri
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("straat", straat).append("huisnummer", huisnummer).append("toevoeging", toevoeging).append("postcode", postcode).append("plaats", plaats).append("soortAdres", soortAdres).toString();
+        return new ToStringBuilder(this).append("id", id).append("straat", straat).append("huisnummer", huisnummer).append("toevoeging", toevoeging).append("postcode", postcode).append("plaats", plaats).append("soortAdres", soortAdres).append("soortEntiteit", soortEntiteit).append("entiteitId", entiteitId).append("parentIdentificatie", parentIdentificatie).append("identificatie", identificatie).toString();
     }
 }
