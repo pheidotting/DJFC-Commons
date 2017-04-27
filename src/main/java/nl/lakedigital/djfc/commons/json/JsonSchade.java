@@ -29,6 +29,7 @@ public class JsonSchade {
     private String soortEntiteit;
     private String readOnly;
     private String notReadOnly;
+    private String identificatie;
 
     public Long getId() {
         return id;
@@ -207,6 +208,14 @@ public class JsonSchade {
 
     public void setNotReadOnly(String notReadOnly) {
         this.notReadOnly = notReadOnly;
+    }
+
+    public String getIdentificatie() {
+        return identificatie;
+    }
+
+    public void setIdentificatie(String identificatie) {
+        this.identificatie = identificatie;
     }
 
     /**
