@@ -34,6 +34,7 @@ public class JsonBedrijf {
     private String soortEntiteit;
     private boolean readOnly;
     private boolean notReadOnly;
+    private String identificatie;
 
     public class AdressenModel {
         private List<JsonAdres> adressen;
@@ -307,6 +308,14 @@ public class JsonBedrijf {
 
     public void setNotReadOnly(boolean notReadOnly) {
         this.notReadOnly = notReadOnly;
+    }
+
+    public String getIdentificatie() {
+        return identificatie;
+    }
+
+    public void setIdentificatie(String identificatie) {
+        this.identificatie = identificatie;
     }
 
     @Override
