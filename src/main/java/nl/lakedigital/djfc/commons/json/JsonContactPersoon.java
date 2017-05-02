@@ -12,7 +12,7 @@ public class JsonContactPersoon {
     private String tussenvoegsel;
     private String achternaam;
     private String emailadres;
-    private Long bedrijf;
+    private String bedrijf;
     private String functie;
     private List<JsonTelefoonnummer> telefoonnummers;
 
@@ -64,11 +64,11 @@ public class JsonContactPersoon {
         this.emailadres = emailadres;
     }
 
-    public Long getBedrijf() {
+    public String getBedrijf() {
         return bedrijf;
     }
 
-    public void setBedrijf(Long bedrijf) {
+    public void setBedrijf(String bedrijf) {
         this.bedrijf = bedrijf;
     }
 
