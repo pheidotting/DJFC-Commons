@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonContactPersoon {
-
-    private Long id;
+    private String identificatie;
     private String wachtwoord;
     private String voornaam;
     private String tussenvoegsel;
@@ -16,12 +15,12 @@ public class JsonContactPersoon {
     private String functie;
     private List<JsonTelefoonnummer> telefoonnummers;
 
-    public Long getId() {
-        return id;
+    public String getIdentificatie() {
+        return identificatie;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdentificatie(String identificatie) {
+        this.identificatie = identificatie;
     }
 
     public String getWachtwoord() {
