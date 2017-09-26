@@ -1,8 +1,5 @@
 package nl.lakedigital.djfc.appender;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
 
@@ -21,7 +18,6 @@ public class LogglyAppender extends AppenderSkeleton {
 
     @Override
     protected void append(LoggingEvent event) {
-
         /**
          * We always only produce to the current file. So there's no need for locking
          */
@@ -30,11 +26,11 @@ public class LogglyAppender extends AppenderSkeleton {
 
         String output = this.layout.format(event);
 
-        try {
-            HttpResponse<String> response = Unirest.post("http://logs-01.loggly.com/inputs/" + token + "/tag/" + tag + "," + event.getLevel()).header("accept", "application/json").body(output).asString();
-        } catch (UnirestException e) {
-            e.printStackTrace();
-        }
+        //        try {
+        //            HttpResponse<String> response = Unirest.post("http://logs-01.loggly.com/inputs/" + token + "/tag/" + tag + "," + event.getLevel()).header("accept", "application/json").body(output).asString();
+        //        } catch (UnirestException e) {
+        //            e.printStackTrace();
+        //        }
 
     }
 
