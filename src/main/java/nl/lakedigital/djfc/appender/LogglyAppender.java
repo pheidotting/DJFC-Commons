@@ -2,10 +2,13 @@ package nl.lakedigital.djfc.appender;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
+import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
 
 public class LogglyAppender extends AppenderSkeleton {
     private String tag = "";
     private String token = "";
+    private String interval = "1";
 
     public LogglyAppender() {
         super();
@@ -15,23 +18,20 @@ public class LogglyAppender extends AppenderSkeleton {
         super(isActive);
     }
 
+    private LogglyEventsBuffer logglyEventsBuffer;
 
     @Override
     protected void append(LoggingEvent event) {
-        /**
-         * We always only produce to the current file. So there's no need for locking
-         */
+        if (logglyEventsBuffer == null) {
+            ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+            logglyEventsBuffer = (LogglyEventsBuffer) appContext.getBean("logglyEventsBuffer");
+        }
 
         assert this.layout != null : "Cannot log, there is no layout configured.";
 
         String output = this.layout.format(event);
 
-        //        try {
-        //            HttpResponse<String> response = Unirest.post("http://logs-01.loggly.com/inputs/" + token + "/tag/" + tag + "," + event.getLevel()).header("accept", "application/json").body(output).asString();
-        //        } catch (UnirestException e) {
-        //            e.printStackTrace();
-        //        }
-
+        logglyEventsBuffer.add(output, event.getLevel(), token, tag, Integer.parseInt(interval));
     }
 
     public String getTag() {
@@ -48,6 +48,10 @@ public class LogglyAppender extends AppenderSkeleton {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public void setInterval(String interval) {
+        this.interval = interval;
     }
 
     @Override
