@@ -12,7 +12,7 @@ import java.util.TimerTask;
 public class LogglyEventsBuffer {
     private List<LogglyEvent> events;
     private Timer timer;
-
+    private boolean flushing = false;
 
     public void add(String event, Level level, final String token, final String tag, int interval) {
         if (events == null) {
@@ -20,12 +20,12 @@ public class LogglyEventsBuffer {
         }
         events.add(new LogglyEvent(event, level));
 
-        if (events.size() >= 500 || level == Level.ERROR) {
+        if (!events.isEmpty() && events.size() >= 500 || level == Level.ERROR) {
             flush(token, tag);
         }
-        if (timer == null) {
+        if (timer == null && !flushing) {
             int delay = interval * 1000;
-            int period = 1000;
+            int period = 5000;
             this.timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
 
@@ -39,8 +39,9 @@ public class LogglyEventsBuffer {
     }
 
     public void flush(String token, String tag) {
-        if (events != null && !events.isEmpty()) {
-            List<LogglyEvent> eventsToFlush = new ArrayList<>(events);
+        if (events != null && !events.isEmpty() && !flushing) {
+            flushing = true;
+            List<LogglyEvent> eventsToFlush = new ArrayList<>(events != null ? events : new ArrayList<LogglyEvent>());
             events = null;
 
             for (LogglyEvent event : eventsToFlush) {
@@ -51,6 +52,7 @@ public class LogglyEventsBuffer {
                     e.printStackTrace();
                 }
             }
+            flushing = false;
         }
     }
 
