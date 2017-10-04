@@ -6,7 +6,7 @@
 
     <groupId>nl.lakedigital.djfc</groupId>
     <artifactId>djfc-commons</artifactId>
-    <version>5.32</version>
+    <version>5.33</version>
 
     <properties>
         <spring-framework.version>4.2.5.RELEASE</spring-framework.version>
