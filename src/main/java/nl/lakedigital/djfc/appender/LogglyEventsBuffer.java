@@ -26,15 +26,17 @@ public class LogglyEventsBuffer {
         if (timer == null && !flushing) {
             int delay = interval * 1000;
             int period = 5000;
-            this.timer = new Timer();
-            timer.scheduleAtFixedRate(new TimerTask() {
+            try {
+                this.timer = new Timer();
+                timer.scheduleAtFixedRate(new TimerTask() {
 
-                public void run() {
-                    flush(token, tag);
+                    public void run() {
+                        flush(token, tag);
 
-                }
-            }, delay, period);
-            timer = null;
+                    }
+                }, delay, period);
+                timer = null;
+            }catch (OutOfMemoryError outOfMemoryError){}
         }
     }
 
