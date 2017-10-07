@@ -29,6 +29,7 @@ public class JsonPolis {
     private List<String> errors;
     private String soortEntiteit;
     private Long entiteitId;
+    private String parentIdentificatie;
     private String readOnly;
     private String notReadOnly;
     private List<JsonOpmerking> opmerkingen;
@@ -225,6 +226,14 @@ public class JsonPolis {
 
     public void setEntiteitId(Long entiteitId) {
         this.entiteitId = entiteitId;
+    }
+
+    public String getParentIdentificatie() {
+        return parentIdentificatie;
+    }
+
+    public void setParentIdentificatie(String parentIdentificatie) {
+        this.parentIdentificatie = parentIdentificatie;
     }
 
     public List<JsonOpmerking> getOpmerkingen() {
