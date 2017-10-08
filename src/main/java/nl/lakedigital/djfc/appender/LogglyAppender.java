@@ -1,5 +1,6 @@
 package nl.lakedigital.djfc.appender;
 
+import inloggen.SessieHolder;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
@@ -30,8 +31,9 @@ public class LogglyAppender extends AppenderSkeleton {
         assert this.layout != null : "Cannot log, there is no layout configured.";
 
         String output = this.layout.format(event);
+        String tagOutput = tag + "," + SessieHolder.get().getTrackAndTraceId();
 
-        logglyEventsBuffer.add(output, event.getLevel(), token, tag, Integer.parseInt(interval));
+        logglyEventsBuffer.add(output, event.getLevel(), token, tagOutput, Integer.parseInt(interval));
     }
 
     public String getTag() {
