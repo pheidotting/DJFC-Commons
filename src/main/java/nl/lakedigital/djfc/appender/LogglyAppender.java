@@ -31,7 +31,7 @@ public class LogglyAppender extends AppenderSkeleton {
         assert this.layout != null : "Cannot log, there is no layout configured.";
 
         String output = this.layout.format(event);
-        String tagOutput = "";
+        String tagOutput = tag + "," + event.getLoggerName();
         if (SessieHolder.get().getTrackAndTraceId() != null && !"".equals(SessieHolder.get().getTrackAndTraceId())) {
             tagOutput = tag + "," + SessieHolder.get().getTrackAndTraceId();
         }
