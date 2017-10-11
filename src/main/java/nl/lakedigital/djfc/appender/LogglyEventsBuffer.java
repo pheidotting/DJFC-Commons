@@ -18,10 +18,10 @@ public class LogglyEventsBuffer {
         if (events == null) {
             events = new ArrayList<>();
         }
-        events.add(new LogglyEvent(event, level));
+        events.add(new LogglyEvent(event, level, tag));
 
         if (!events.isEmpty() && events.size() >= 500 || level == Level.ERROR) {
-            flush(token, tag);
+            flush(token);
         }
         if (timer == null && !flushing) {
             int delay = interval * 1000;
@@ -31,7 +31,7 @@ public class LogglyEventsBuffer {
                 timer.scheduleAtFixedRate(new TimerTask() {
 
                     public void run() {
-                        flush(token, tag);
+                        flush(token);
 
                     }
                 }, delay, period);
@@ -40,7 +40,7 @@ public class LogglyEventsBuffer {
         }
     }
 
-    public void flush(String token, String tag) {
+    public void flush(String token) {
         if (events != null && !events.isEmpty() && !flushing) {
             flushing = true;
             List<LogglyEvent> eventsToFlush = new ArrayList<>(events != null ? events : new ArrayList<LogglyEvent>());
@@ -49,7 +49,7 @@ public class LogglyEventsBuffer {
             for (LogglyEvent event : eventsToFlush) {
 
                 try {
-                    Unirest.post("http://logs-01.loggly.com/inputs/" + token + "/tag/" + tag + "," + event.getLevel().toString()).header("accept", "application/json").body(event.getEvent()).asString();
+                    Unirest.post("http://logs-01.loggly.com/inputs/" + token + "/tag/" + event.getTag() + "," + event.getLevel().toString()).header("accept", "application/json").body(event.getEvent()).asString();
                 } catch (UnirestException e) {
                     e.printStackTrace();
                 }
@@ -62,10 +62,12 @@ public class LogglyEventsBuffer {
     private class LogglyEvent {
         private String event;
         private Level level;
+        private String tag;
 
-        public LogglyEvent(String event, Level level) {
+        public LogglyEvent(String event, Level level, String tag) {
             this.event = event;
             this.level = level;
+            this.tag = tag;
         }
 
         public String getEvent() {
@@ -82,6 +84,14 @@ public class LogglyEventsBuffer {
 
         public void setLevel(Level level) {
             this.level = level;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
         }
     }
 }
